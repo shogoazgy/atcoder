@@ -6,16 +6,15 @@ typedef long long ll;
 int main() {
     ll n;
     cin >> n;
-    vector <ll> a(n);
-    rep(i,n) {
-        cin >> a[i];
-    }
     ll ans = 0;
-    for(ll i = 0; i < n - 1; ++i) {
-        for (ll j = i + 1; j < n; ++j) {
-            ans += (a[i]-a[j])*(a[i]-a[j]);
-            //cout << ans << endl;
-        }
+    ll t = 0;
+    rep(i,n) {
+        ll x;
+        cin >> x;
+        ans += x*x;
+        t += x;
     }
+    ans *= n;
+    ans = ans - t*t;
     cout << ans << endl;
 }
